@@ -1,0 +1,279 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+    background-color: rgb(255, 255, 255);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* nav bar */
+
+.logo-img {
+   font-size: 30px;
+   color: rgb(148, 65, 9);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    /* text-transform: uppercase; */
+    /* font-size: 2.6em; */
+}
+nav {
+    margin: 4em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+nav ul li a.active:before {
+    position: absolute;
+    content: "";
+    width: 35%;
+    height: 1px;
+    border-bottom: 2px solid rgb(148, 65, 9);
+    bottom: -6px;
+}
+
+nav ul li a:before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid rgb(148, 65, 9);
+    bottom: -6px;
+    transition: width .3s;
+}
+
+
+/* Responsive rules */
+
+@media screen and (max-width: 715px) {
+    
+}
+/* hero section */
+
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+.right-col {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 5.2rem;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+    color: rgb(148, 65, 9);
+}
+
+.subhead {
+    font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;
+}
+
+.cta-btns, .secondary-cta {
+    display: flex;
+    gap: 2em;
+}
+
+.primary-cta {
+    background-color: rgb(148, 65, 9);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+
+.secondary-cta {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1em 0;
+    transition: transform .3s;
+}
+
+/* .secondary-cta img {
+    width: 30px;
+} */
+
+.news {
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: .8em;
+    position: relative;
+}
+
+p.employees {
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+p.details {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+ /* Right colum gallary */
+
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas:
+        "left right"
+        "left bottom";
+}
+
+
+.card {
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    transition: background-size 800ms;
+}
+.card1 {
+    grid-area: left;
+    background-image: url(/images/img1.jpg);
+}
+
+.card2 {
+    background-image: url(/images/img2.jpg);
+}
+
+.card3 {
+    background-image: url(/images/img3.jpg);
+}
+
+
+.card-details {
+    background-color: rgb(148, 65, 9);
+    border-radius: .6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 800ms;
+}
+
+.card-details a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.card-details p {
+    font-size: 1.4rem;
+    margin: 0;
+    color: white;
+}
+
+ p.product-price {
+    font-size: 1.8rem;
+    color: white;
+ }
+
+ /* Microinteraction */
+
+ nav ul li a:hover:before {
+    width: 35%;
+ }
+
+ .primary-cta:hover {
+    background-color: rgb(189, 94, 30);
+ }
+
+ .secondary-cta:hover {
+    transform: translateX(10px);
+    text-decoration: underline;
+ }
+
+ .card:hover {
+    background-size: 160%;
+ }
+
+ .card:hover .card-details {
+    transform: translateY(-20px);
+ }
+
+
+ /* Intro Animation */
+
+
+ .overlay {
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+ }
+
+
+ @keyframes reveal {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+ }
+
+ main {
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+ }
+
+ @keyframes growIn {
+    to {
+        transform: scale(1);
+    }
+ }
